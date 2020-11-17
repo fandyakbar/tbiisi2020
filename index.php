@@ -7,7 +7,7 @@
     <meta name="author" content="Pariwsata Halal Bukittinggi">
     <meta name="keyword" content="Pariwisata Halal, Bukittinggi">
 
-    <title>Pariwisata Halal Bukittinggi</title>
+    <title>WebGIS Hotel Bukittinggi</title>
 
     <!-- Bootstrap core CSS -->
     <link href="angkot_bkt/assets/css/bootstrap.css" rel="stylesheet">
@@ -31,23 +31,10 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
           <form class="form-login" action="hotel_bkt/index.php" method="post">
-            <h2 class="form-login-heading" style="background:#ffd777;border-color:white">Pariwisata Bukittinggi</h2>
+            <h2 class="form-login-heading" style="background:#000000;border-color:white">WebGIS Hotel Bukittinggi</h2>
             <div class="login-wrap">       
-              <select class="form-control kota text-center" style="width:100%;margin-top:10px" id="pilihan" name="pilihan">
-                  <option value="1">Angkot</option>
-                  <option value="2">Hotel</option>
-                  <option value="3">Industri Kecil</option>
-                  <option value="4">Kuliner</option>
-                  <option value="5">Tempat Ibadah</option>                        
-                  <option value="6">Rumah Makan</option>                        
-                  <option value="7">Souvenir</option>                        
-                  <option value="8">Tempat Wisata</option>
-		  <option value="9">Jambu Air-Cingkariang</option>
-		
-                         
-              </select>
-               <hr>
-              <button type="submit" class="btn btn-theme btn-block"style="background:#ffd777;border-color:white">Pilih</button>   
+             
+              <button type="submit" class="btn btn-theme btn-block"style="background:#000000;border-color:white">Get Started</button>   
             </div>
           </form>     
 

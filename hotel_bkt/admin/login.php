@@ -38,11 +38,11 @@ if(isset($_SESSION['A'])){
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
 		      <form class="form-login" action="act/login.php" method="post">
-		        <h2 class="form-login-heading" style="background:#ffd777;border-color:white">sign in now</h2>
+		        <h2 class="form-login-heading" style="background:#000000;border-color:white">sign in now</h2>
 		        <div class="login-wrap">       
                 <input type="text" class="form-control" placeholder="Username" name="username" autofocus>&nbsp
                 <input type="password" class="form-control" name="password" placeholder="Password">&nbsp
-                <button class="btn btn-theme btn-block" type="submit" name="submit" style="background:#ffd777;border-color:white"><i class="fa fa-lock"></i> SIGN IN</button>
+                <button class="btn btn-theme btn-block" type="submit" name="submit" style="background:#000000;border-color:white"><i class="fa fa-lock"></i> SIGN IN</button>
                 <div class="registration">
                     Don't have an account yet?<br/>
                     <a class="" href="pages/register.php">
@@ -50,7 +50,7 @@ if(isset($_SESSION['A'])){
                     </a>
                 </div>
 		            <hr>
-                <a href="../" class="btn btn-theme btn-block"style="background:#ffd777;border-color:white">Back</a>
+                <a href="../" class="btn btn-theme btn-block"style="background:#000000;border-color:white">Back</a>
 		        </div>
 
 		      </form>	  	

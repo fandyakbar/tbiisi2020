@@ -42,16 +42,16 @@ session_start();
     <script src="../config_public.js"></script>
     <script src="_map.js"></script>
     <script src="_fungsional.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNnzxae2AewMUN0Tt_fC3gN38goeLVdVE&sensor=true"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANIx4N48kL_YEfp-fVeWmJ_3MSItIP8eI&callback=true"></script>
 
 
 <style type="text/css">
       #legend {
-        background: white;
+        background: black;
         padding: 10px;
         margin: 5px;
         font-size: 12px;
-        font-color: black;
+        font-color: white;
         font-family: Arial, sans-serif;
     
     }
@@ -122,6 +122,134 @@ session_start();
       100% { transform: rotate(360deg); }
     }
     </style>
+
+    <style>
+      body {
+        font-family: Arial;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      img {
+        vertical-align: middle;
+      }
+
+      /* Position the image container (needed to position the left and right arrows) */
+      .container2 {
+        position: relative;
+      }
+
+      /* Hide the images by default */
+      .mySlides {
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 20px;
+        background-color: rgba(219,219,219,0.8);
+      } 
+
+      /* Add a pointer when hovering over the thumbnail images */
+      .cursor {
+        cursor: pointer;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 60%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: black;
+        background-color: rgba(219,219,219,0.5);
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      .prev1,
+      .next1 {
+        cursor: pointer;
+        position: absolute;
+        top: 100%;
+        width: auto;
+        padding: 10px;
+        margin-top: 9.2px;
+        color: white;
+        background-color: rgba(0,0,0,0.5);
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .next1 {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev{
+        left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev1{
+        left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+      }
+
+      .prev1:hover,
+      .next1:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+      }
+      .row2:after {
+        
+        display: none;
+        clear: both;
+      }
+
+      /* Six columns side by side */
+      .column {
+        float: left;
+        width: 25%; 
+        padding: 2.5px;
+        padding-top: 4px;
+        background-color: grey;
+      }
+
+      /* Add a transparency effect for thumnbail images */
+      .demo {
+        opacity: 1;
+      }
+
+      .active,
+      .demo:hover {
+        opacity: 1;
+        color: black;
+      }
+    </style>
     
   </head>
 
@@ -135,7 +263,7 @@ session_start();
         
           <!-- Modal content-->
           <div class="modal-content">
-            <div class="modal-header" style="background:#ffd777">
+            <div class="modal-header"c>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title" id="mg_title">Modal Header</h4>
             </div>
@@ -193,7 +321,7 @@ session_start();
         
           <!-- Modal content-->
           <div class="modal-content">
-            <div class="modal-header" style="background:#ffd777">
+            <div class="modal-header" style="background:black">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title" id="modal_title">Modal Header</h4>
             </div>
@@ -211,14 +339,14 @@ session_start();
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
       <!--header start-->
-      <header class="header black-bg">
+      <header class="header black-bg" style="background-color:black;border-bottom:1px solid black;">
         <div class="sidebar-toggle-box">
-            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation" style="color:white;"></div>
         </div>
         <!--logo start-->
-        <a href="index.php" class="logo"><b>Bukittinggi's Hotel</b></a>
+        <a href="index.php" class="logo" style="color:white;"><b>WebGIS Hotel ( 24-1811523004 Fandy Akbar )</b></a>
         <div class="top-menu">
-        	<ul class="nav pull-right top-menu">
+          <ul class="nav pull-right top-menu">
             <li><div id="loader" style="display:none;margin-right:5px"></div></li>
             <li id="loader_text" style="margin-top:13px;margin-right:40px;display:none"><b>Loading</b></li>
             <li class="nav pull-right top-menu">
@@ -227,7 +355,7 @@ session_start();
               //echo "username $username, role $role,";
             if($_SESSION['C'] == false)
             {
-              echo "<a href='admin/login.php' class='logo' style='font-size:14px;color:black'><i class='fa fa-sign-in'></i>
+              echo "<a href='admin/login.php' class='logo' style='font-size:14px;color:white'><i class='fa fa-sign-in'></i>
               <b>Login</b></a>";
               //echo "username $username, role $role,$_SESSION['C'] || $_SESSION['A'] || $_SESSION['P'] ";
             }
@@ -241,7 +369,7 @@ session_start();
             
               
             </li>
-        	</ul>
+          </ul>
         </div>
       </header>
       <!--header end-->
@@ -273,10 +401,10 @@ session_start();
                             <label style="color: black; margin-right:20px">Google Map with Location List</label>
                             <input type="hidden" id="myLatLocation" value="0">
                             <input type="hidden" id="myLngLocation" value="0">
-                            <a class="btn btn-default" role="button" data-toggle="collapse" onclick="posisisekarang()" title="Current Position" style="margin-right:10px"   ><i class="fa fa-location-arrow" style="color:black;"></i></a>
-                            <a class="btn btn-default" role="button" data-toggle="collapse" onclick="lokasimanual()" title=" Manual Position" ><i class="fa fa-map-marker" style="color:black;"></i></a>
+                            <a class="btn btn-success" role="button" data-toggle="collapse" onclick="posisisekarang()" title="Current Position"><i class="fa fa-location-arrow" style="color:white;"></i></a>
+                            <a class="btn btn-success" role="button" data-toggle="collapse" onclick="lokasimanual()" title=" Manual Position"><i class="fa fa-map-marker" style="color:white;"></i></a>
                             <label id="tombol">
-          <a class="btn btn-default" role="button" id="showlegenda" data-toggle="collapse" onclick="legenda()" title="Legend"   ><i class="fa fa-eye" style="color:black;"></i></a></label>
+                            <a class="btn btn-success" role="button" id="showlegenda" data-toggle="collapse" onclick="legenda()" title="Legend"   ><i class="fa fa-eye" style="color:white;"></i></a></label>
                             
                           </header>
 
@@ -287,14 +415,14 @@ session_start();
                            </div>
                         </div>
                       </div><!-- /col-md-12 -->                  
-                  </div><!-- /row -->          		   
+                  </div><!-- /row -->                
 
                   <!--INFO OBJEK-->         
                   <div id="view_data_tengah1" class="row" style="display:none">
                       <div class="col-md-12 col-sm-12 mb">
                         <div class="white-panel pns" style="height:auto;padding-bottom:20px">
                            <div style="margin:0px 20px 10px 20px">
-                             <h5 class="btn btn-compose" >Object Information</h5>
+                             <h5 style="background-color:black" class="btn btn-compose" >Object Information</h5>
                            </div>
 
                             <!--OBJEK SEKITAR-->         
@@ -440,28 +568,138 @@ session_start();
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->                  
                       
+
+
+                         
                     <!-- DATA TABLE -->
-                      <div id="view_kanan_table" class="col-md-4 col-sm-4 mb" style="margin-top:0px; display:none;">
-                        <div class="white-panel pns" style="height:510px">
-                           <div class="white-header" style="height:40px;margin:20px;background:white;color:black">
-                             <h5 class="btn btn-compose" id="judul_table">List Hotel</h5>
-                           </div>
-                           <div class="row">
-                             <div class="col-sm-6 col-xs-6"></div>
-                           </div>
-                           <div style="height:410px; overflow-y: scroll; margin:20px;">
-                              <table style="color:black" class="table table-bordered">
-                                <!-- <tr id="kanan_table1"></tr> -->
-                                <tbody id='kanan_table'></tbody>
-                              </table>
-                           </div>
+                   
+                   <!-- GALLLERY  RECOMMENDASI TOURISM -->
+                    <div id="view_kanan_table" class="col-md-4 col-sm-4 mb" style="margin-top:20px; display:block;"> 
+                      <div class="white-panel pns" style="height: 450px;">
+                        <header class="panel-heading" style=" width: 100%"  >
+                          <label class="btn btn-compose" id="judul_table" style="background-color:black;border-bottom:black;color:white; margin: 0px;">Popular Hotel
+                          </label>
+                        </header>
+                        <div style="height:500px; margin-top:0px;">
+
+                          <!-- php -->
+                          <?php 
+                          $result=  pg_query("SELECT hotel.id, hotel.name, count(comment) as popular
+                              from hotel join review on 
+                              hotel.id=review.id_hotel
+                              group by review.id_hotel, hotel.name, hotel.id
+                              order by popular desc limit 4
+                              ");
+
+        
+                          ?>
+                          <!-- php -->
+              
+
+                        <div id="populerhotel">
+                          <div class="container2" style="margin-bottom: 0px;">
+                            <div class="row2" style="margin-bottom: 0px">
+                              <?php
+                               while($baris = pg_fetch_array($result)){
+                              ?>
+                            <div class="mySlides">
+                                <a href="" onclick="galleryreco('<?php echo $baris['id']; ?>')"><img src="../_foto/<?php echo $baris['id'].'1.jpg'  ?>" style="width:100%"></a>
+                                <div style="background-color: black"><label style="color:white"></label><?php echo $baris['name'];  ?></div>
+                              </div>
+
+                              <?php 
+                                }
+                               ?>
+                           
+                              <a class="prev" onclick="plusSlides(-1)">❮</a>
+                              <a class="next" onclick="plusSlides(1)">❯</a>
+                            </div>  
+                            
+                            <div class="row2">
+                              <?php 
+                          $result=  pg_query("SELECT hotel.id, hotel.name, count(comment) as popular
+                              from hotel join review on 
+                              hotel.id=review.id_hotel
+                              group by review.id_hotel, hotel.name, hotel.id
+                              order by popular desc limit 4
+                              ");
+
+        
+                          ?>
+                            <?php
+                                $no=0;
+                               while($baris = pg_fetch_array($result)){
+                                $no++;
+                              ?>
+                              <div class="column">
+                                <img class="demo cursor" src="../_foto/<?php echo $baris['id'].'1.jpg'?>" style="width:100%" onclick="currentSlide(<?php echo $no ?>)">
+                              </div>
+
+                              <?php  
+                              }
+                               ?>
+
+
+                              <a class="prev1" onclick="plusSlides(-1)">❮</a>
+                              <a class="next1" onclick="plusSlides(1)">❯</a>
+                            </div>
+                          </div>
                         </div>
-                      </div><!-- /col-md-12 -->
+                          <div style="height:350px; overflow-y: scroll; margin:2px;">
+                            <table style="color:black;" class="table table-bordered" >
+                                <tbody id='kanan_table'></tbody>
+                            </table>
+                          </div>  
+                        <script>
+                          var slideIndex = 1;
+                          showSlides(slideIndex);
+
+
+                          function plusSlides(n) {
+                            showSlides(slideIndex += n);
+                          }
+
+                          function currentSlide(n) {
+                            showSlides(slideIndex = n);
+                          }
+
+                          function showSlides(n) {
+                            var i;
+                            var slides = document.getElementsByClassName("mySlides");
+                            var dots = document.getElementsByClassName("demo");
+                            var captionText = document.getElementById("caption");
+                            if (n > slides.length) {slideIndex = 1}
+                            if (n < 1) {slideIndex = slides.length}
+                            for (i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";
+                            }
+                            for (i = 0; i < dots.length; i++) {
+                                dots[i].className = dots[i].className.replace(" active", "");
+                            }
+                            slides[slideIndex-1].style.display = "block";
+                            dots[slideIndex-1].className += " active";
+                            captionText.innerHTML = dots[slideIndex-1].alt;
+                            }
+
+                            // GALLERY RECOMENDATION SLIDER DI INDEX
+                              function galleryreco(a) {
+                              console.log(a);
+                              window.open(server + 'gallery.php?idgallery=' + a);
+                              }
+                          </script>
+
+
+                      </div>
+                    </div>
+                </div>      
+
+                                
+                      <!-- /col-md-12 -->
                       
                       <div id="view_kanan_table1" class="col-md-4 col-sm-4 mb" style="margin-top:0px; display:none;">
                         <div class="white-panel pns">
                            <div class="white-header" style="height:40px;margin:20px;background:white;color:black">
-                             <h5 class="btn btn-compose" id="judul_table">Object Arround</h5>
+                             <h5 class="btn btn-compose" id="judul_table" style="background-color:black;color:white;" >Object Arround</h5>
                            </div>
                            <div class="row">
                              <div class="col-sm-6 col-xs-6"></div>
@@ -478,7 +716,7 @@ session_start();
                       <div id="view_table_sekitar" class="col-md-4 col-sm-4 mb" style="display:none">
                         <div class="white-panel pns" style="height:510px">
                            <div class="white-header" style="height:40px;margin:20px;margin-top:0px;background:white;color:black">
-                             <h5 class="btn btn-compose">Search Results Object Around</h5>
+                             <h5 class="btn btn-compose" style="background-color:black;color:white;">Search Results Object Around</h5>
                            </div>
                            <div class="row">
                              <div class="col-sm-6 col-xs-6"></div>
@@ -602,7 +840,7 @@ session_start();
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
@@ -617,8 +855,9 @@ session_start();
 
     <!--script for this page-->
     <script src="assets/js/sparkline-chart.js"></script>    
-  	<script src="assets/js/zabuto_calendar.js"></script>	
-  	
+    <script src="assets/js/zabuto_calendar.js"></script>  
+    <script type="text/javascript" src="html5gallery/html5gallery.js"></script>
+    
 <script>
 var slideIndex = 1;
 //showDivs(slideIndex);
@@ -650,6 +889,6 @@ function showDivs(n) {
 
   </body>
   <footer>
-    <center>&copy;Kelompok 6</center>
+    <center></center>
   </footer>
 </html>

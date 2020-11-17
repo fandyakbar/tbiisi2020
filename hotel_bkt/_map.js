@@ -106,7 +106,7 @@ function legenda()
     var legend = document.createElement('div');
         legend.id = 'legend';
         var content = [];
-        content.push('<h4>Legenda</h4>');
+        content.push('<h4>Legend</h4>');
         /*content.push('<p><div class="color l"></div>Culinary</p>');*/
         content.push('<p><div class="color f"></div>Tourism</p>');
         content.push('<p><div class="color g"></div>Small Industry</p>');
@@ -316,7 +316,7 @@ function hideLegenda() {
                     map: map});
 
           marker.info = new google.maps.InfoWindow({
-              content: "<center><a style='color:black;'>Anda Disini <br> lat : "+koordinat.lat+" <br> long : "+koordinat.lng+"</a></center>",
+              content: "<center><a style='color:black;'>You're Here <br> lat : "+koordinat.lat+" <br> long : "+koordinat.lng+"</a></center>",
               pixelOffset: new google.maps.Size(0, -1)
                 });
               marker.info.open(map, marker);
@@ -331,7 +331,7 @@ function hideLegenda() {
       }
 
       function lokasimanual(){
-        alert('Klik Peta');
+        alert('Determine Your Location');
         map.addListener('click', function(event) {
           addMarker_Manual(event.latLng);
           });
@@ -356,7 +356,7 @@ function hideLegenda() {
         centerLokasi = new google.maps.LatLng(koordinat.lat, koordinat.lng);        
 
         marker.info = new google.maps.InfoWindow({
-            content: "<center><a style='color:black;'>Anda Disini <br> lat : "+koordinat.lat+" <br> long : "+koordinat.lng+"</a></center>",
+            content: "<center><a style='color:black;'>You're Here <br> lat : "+koordinat.lat+" <br> long : "+koordinat.lng+"</a></center>",
             pixelOffset: new google.maps.Size(0, -1)
               });
         marker.info.open(map, marker);
@@ -446,7 +446,7 @@ function hideLegenda() {
             if (mushalla == 1) {
               mushalla_stat = "Ada Mushalla"
             };
-            $('#table_tengah_info').append("<tr><td style='text-align:left'>Name</td><td>:</td><td style='text-align:left'> "+name+"</td></tr><tr><td style='text-align:left'>Address</td><td>:</td><td style='text-align:left'> "+address+"</td></tr><tr><td style='text-align:left'>Cp</td><td>:</td><td style='text-align:left'> "+cp+"</td></tr><tr><td style='text-align:left'>Syarat Menginap</td><td>:</td><td style='text-align:left'> "+syarat+"</td></tr><tr><td style='text-align:left'>Mushalla</td><td>:</td><td style='text-align:left'> "+mushalla_stat+"</td></tr><tr><td style='text-align:left'>Type</td><td>:</td><td style='text-align:left'> "+type_hotel+"</td></tr>");
+            $('#table_tengah_info').append("<tr><td style='text-align:left'>Name</td><td>:</td><td style='text-align:left'> "+name+"</td></tr><tr><td style='text-align:left'>Address</td><td>:</td><td style='text-align:left'> "+address+"</td></tr><tr><td style='text-align:left'>Cp</td><td>:</td><td style='text-align:left'> "+cp+"</td></tr><tr><td style='text-align:left'>Booking Requirement</td><td>:</td><td style='text-align:left'> "+syarat+"</td></tr><tr><td style='text-align:left'>Mushalla</td><td>:</td><td style='text-align:left'> "+mushalla_stat+"</td></tr><tr><td style='text-align:left'>Type</td><td>:</td><td style='text-align:left'> "+type_hotel+"</td></tr>");
 
             //MARKER
             rad_lat = lat;
@@ -461,7 +461,7 @@ function hideLegenda() {
               animation: google.maps.Animation.DROP,
               });
             marker.info = new google.maps.InfoWindow({
-                content: "<span style=color:black><center><b>"+name+"</b></center><br><i class='fa fa-map-marker'></i>"+address+"<br><i class='fa fa-phone'></i>"+cp+"<br><br><a class='btn btn-default fa fa-road' role=button' onclick='route_sekitar(\""+pos_lat+"\",\""+pos_lng+"\",\""+rad_lat+"\",\""+rad_lng+"\")' title='route' aria-controls='Route' id='btn_angkot'></a>&nbsp<a class='btn btn-default fa fa-info' role=button' onclick='galeri(\""+ids+"\")' title='Info' aria-controls='Info' id='btn_gallery'></a></label>&nbsp<a class='btn btn-default fa fa-compass' role=button' onclick='cekNearBy()' title='Nearby' aria-controls='Nearby' id='btn_angkot'></a></span>",
+              content: "<span style=color:black><center><b>"+name+"</b></center><br><i class='fa fa-map-marker'></i>"+address+"<br><i class='fa fa-phone'></i>"+cp+"<br><br><a class='btn btn-success fa fa-road' role=button' onclick='route_sekitar(\""+pos_lat+"\",\""+pos_lng+"\",\""+rad_lat+"\",\""+rad_lng+"\")' title='route' aria-controls='Route' id='btn_angkot'></a>&nbsp<a class='btn btn-success fa fa-info' role=button' onclick='galeri(\""+ids+"\")' title='Info' aria-controls='Info' id='btn_gallery'></a>&nbsp<a class='btn btn-success fa fa-compass' role=button' onclick='cekNearBy()' title='Nearby' aria-controls='Nearby' id='btn_angkot'>&nbsp</span>",
                 pixelOffset: new google.maps.Size(0, -1)
                   });
             marker.info.open(map, marker);
@@ -522,13 +522,15 @@ function hideLegenda() {
       }
 
       function cekNearBy(){
-          // var kt = document.getElementById('view_kanan_table');
-          $("#view_kanan_table").empty();
-          $('#kanan_table').empty();
-          $("#view_kanan_table1").show();
-          var stringHTML = "<tr><td colspan='3'><div class='checkbox'><label style='float:left'><input id='check_tw' type='checkbox'>Tourism</label></div><div class='checkbox'><label style='float:left'><input id='check_i' type='checkbox'>Small Industry</label></div><div class='checkbox'><label style='float:left'><input id='check_oo' type='checkbox' value=''> Souvenir </label></div><div class='checkbox'><label style='float:left'> <input id='check_m' type='checkbox' value=''>Worship</label></div><div class='checkbox'><label style='float:left'><input id='check_k' type='checkbox' value=''>Culinary</label></div><div class='checkbox'><label style='float:left'><input id='check_h' type='checkbox' value='5'>Hotel</label></div><div class='checkbox'><label style='float:left'><input id='check_r' type='checkbox' value=''>Restaurant</label></div><input id='inputradius2' type='range' onchange='aktifkanRadius()' name='inputradius' data-highlight='true' min='1' max='10' value='1'><div id='angkot_sekitar' class='centered'></div></td></tr>";
-          document.getElementById('kanan_table1').innerHTML = stringHTML;
-          //$('#kanan_table').empty();   
+        // var kt = document.getElementById('view_kanan_table');
+        $("#view_kanan_table").empty();
+        $('#kanan_table').empty();
+        $("#view_kanan_table1").show();
+        // $("#view_kanan_table2").show();
+
+        var stringHTML = "<tr><td colspan='3'><div class='checkbox'><label style='float:left'><input id='check_tw' type='checkbox'>Tourism</label></div><div class='checkbox'><label style='float:left'><input id='check_i' type='checkbox'>Small Industry</label></div><div class='checkbox'><label style='float:left'><input id='check_oo' type='checkbox' value=''> Souvenir </label></div><div class='checkbox'><label style='float:left'> <input id='check_m' type='checkbox' value=''>Worship</label></div><div class='checkbox'><label style='float:left'><input id='check_k' type='checkbox' value=''>Culinary</label></div><div class='checkbox'><label style='float:left'><input id='check_h' type='checkbox' value='5'>Hotel</label></div><div class='checkbox'><label style='float:left'><input id='check_r' type='checkbox' value=''>Restaurant</label></div><input id='inputradius2' type='range' onchange='aktifkanRadius()' name='inputradius' data-highlight='true' min='1' max='10' value='1'><div id='angkot_sekitar' class='centered'></div></td></tr>";
+        document.getElementById('kanan_table1').innerHTML = stringHTML;
+        //$('#kanan_table').empty();   
 
       }
 
@@ -649,8 +651,9 @@ function hideLegenda() {
         function listHotel(){ // Menu Hotel
           //clearangkot();
           hapus_menu();
+          $('#populerhotel').hide();
           $('#view_kanan_table').show();
-          document.getElementById('judul_table').innerHTML="List Hotel";
+          document.getElementById('judul_table').innerHTML="Result";
 
           $('#kanan_table').empty();
           $('#kanan_table').append("<tr><th class='centered'>Name</th><th class='centered' colspan='3'>Action</th></tr>");
@@ -665,7 +668,7 @@ function hideLegenda() {
                 var latitude=row.latitude;
                 var longitude = row.longitude;
                 console.log(id + latitude +longitude);
-                $('#kanan_table').append("<tr><td>"+name+"</td><td><a role='button' class='btn btn-success fa fa-info' title='info'  onclick='data_hotel_1_info(\""+id+"\")'></a></td><td><a role='button' class='btn btn-danger fa fa-taxi' title='Angkot' onclick='angkot_sekitar(\""+id+"\")'></a></td></tr>");  
+                $('#kanan_table').append("<tr><td>"+name+"</td><td><a role='button' class='btn btn-success fa fa-info' title='info'  onclick='data_hotel_1_info(\""+id+"\")'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' onclick='angkot_sekitar(\""+id+"\")'></a></td></tr>");  
 
                 //MARKER
                 centerBaru = new google.maps.LatLng(latitude, longitude);
@@ -699,10 +702,12 @@ function hideLegenda() {
 
       function hotel_sekitar_user(){ // Menu Angkot Sekitar
         hapus_Semua();  
-        hapus_menu(); 
+        hapus_menu();
+         $('#populerhotel').hide();
+       
 
         if (pos_lat == 0 || pos_lng == 0) {
-          alert ('Determine your position first');
+          alert ('Determine your position');
         } else {
 
           console.log(rad_lat);
@@ -741,7 +746,7 @@ function hideLegenda() {
             animation: google.maps.Animation.DROP,
             });
           marker.info = new google.maps.InfoWindow({
-              content: "<center><a style='color:black;'>Anda Disini <br> lat : "+rad_lat+" <br> long : "+rad_lng+"</a></center>",
+              content: "<center><a style='color:black;'>You're Here <br> lat : "+rad_lat+" <br> long : "+rad_lng+"</a></center>",
               pixelOffset: new google.maps.Size(0, -1)
                 });
           marker.info.open(map, marker);
@@ -783,7 +788,7 @@ function hideLegenda() {
               map.setCenter(centerBaru);
               klikInfoWindow(id,marker);
 
-              $('#kanan_table').append("<tr><td>"+name+"</td><td><a role='button' class='btn btn-success fa fa-info' onclick='data_hotel_1_info(\""+id+"\")'></a></td><td><a role='button' style='margin:5px' class='btn btn-danger fa fa-taxi' onclick='angkot_sekitar(\""+id+"\")'></a></td></tr>"); 
+              $('#kanan_table').append("<tr><td>"+name+"</td><td><a role='button' class='btn btn-success fa fa-info' onclick='data_hotel_1_info(\""+id+"\")'></a></td><td><a role='button' style='margin:5px' class='btn btn-success fa fa-taxi' onclick='angkot_sekitar(\""+id+"\")'></a></td></tr>"); 
             }//end for
           }});//end ajax  
 
@@ -803,23 +808,24 @@ function hideLegenda() {
           console.log("menu jalan")
           hapus_menu();   
           hapus_Semua();
+          $('#populerhotel').hide();
 
           // DEKLARASI
           var y = "";
           if (tipe == 1) {
-            document.getElementById('judul_table').innerHTML="Search Hotel by Name";
+            document.getElementById('judul_table').innerHTML="Result";
             y = document.getElementById('input_name').value;            
           } else if (tipe == 2) {
-            document.getElementById('judul_table').innerHTML="Search Hotel by Address";
+            document.getElementById('judul_table').innerHTML="Result";
             y = document.getElementById('input_address').value;   
           } else if (tipe == 3) {
-            document.getElementById('judul_table').innerHTML="Search Hotel by Type";
+            document.getElementById('judul_table').innerHTML="Result";
             y = document.getElementById('select_jenis').value;   
           } else if (tipe == 4) {
-            document.getElementById('judul_table').innerHTML="Search Hotel by District";
+            document.getElementById('judul_table').innerHTML="Result";
             y = document.getElementById('select_district').value;   
           } else if (tipe == 5) {
-            document.getElementById('judul_table').innerHTML="Search Hotel by Facility";
+            document.getElementById('judul_table').innerHTML="Result";
             y = document.getElementById('select_facility').value;   
           }
 
@@ -850,7 +856,7 @@ function hideLegenda() {
                 var name = row.name;
                 var lng = row.lng;
                 var lat = row.lat;
-                $('#kanan_table').append("<tr><td>"+name+"</td><td><a role='button' class='btn btn-success fa fa-info' onclick='data_hotel_1_info(\""+id+"\")'></a></td><td><a role='button' class='btn btn-danger fa fa-taxi' title='Angkot' onclick='angkot_sekitar(\""+id+"\")'></a></td></tr>");  
+                $('#kanan_table').append("<tr><td>"+name+"</td><td><a role='button' class='btn btn-success fa fa-info' onclick='data_hotel_1_info(\""+id+"\")'></a></td><td><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' onclick='angkot_sekitar(\""+id+"\")'></a></td></tr>");  
 
                 //MARKER
                 centerBaru = new google.maps.LatLng(lat, lng);
@@ -965,7 +971,7 @@ function hideLegenda() {
             markersDua.push(marker);
             klikInfoWindow(id,marker);
             map.setCenter(centerBaru);
-            $('#table_kanan_hotel').append("<tr><td>"+name+"</td><td><a role='button' class='btn btn-default fa fa-info' style='margin-right:10px' onclick='modal_hotel(\""+id+"\")'></a><a role='button' class='btn btn-default fa fa-picture-o' style='margin-right:10px' onclick='galeri(\""+id+"\")'></a><a role='button' class='btn btn-default fa fa-bus' onclick='route_angkot(\""+lat2+"\",\""+lng2+"\",\""+lat+"\",\""+lng+"\",\""+id_angkot+"\",\""+id+"\")'>Route</a></td></tr>");
+            $('#table_kanan_hotel').append("<tr><td>"+name+"</td><td><a role='button' class='btn btn-success fa fa-info' style='margin-right:10px' onclick='modal_hotel(\""+id+"\")'></a><a role='button' class='btn btn-default fa fa-picture-o' style='margin-right:10px' onclick='galeri(\""+id+"\")'></a><a role='button' class='btn btn-success fa fa-taxi' onclick='route_angkot(\""+lat2+"\",\""+lng2+"\",\""+lat+"\",\""+lng+"\",\""+id_angkot+"\",\""+id+"\")'></a></td></tr>");
           }//end for
         }});//end ajax  
       }
@@ -1446,6 +1452,8 @@ function hideLegenda() {
       *********************************************************************************************************************************************************** */
  
         function aktifkanRadius(){
+         
+
           var pos = new google.maps.LatLng(rad_lat, rad_lng);          
           map.setCenter(pos);
           map.setZoom(16);  
@@ -1654,7 +1662,7 @@ function hideLegenda() {
             markersDua.push(marker);
             klikInfoWindowSM(id,marker);
             map.setCenter(centerBaru);
-            $('#table_kanan_industry').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-default' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'>Route</a><a role='button' style='margin:5px' class='btn btn-default' onclick='modal_small_industry(\""+id+"\")'>Info</a><a role='button' style='margin:5px' class='btn btn-default' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'>Position</a><a role='button' class='btn btn-default' style='margin:5px' onclick='angkot_sekitar_lagi(\""+id+"\")'>Angkot</a></td></tr>");
+            $('#table_kanan_industry').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-info' title='Info' onclick='modal_small_industry(\""+id+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-map-marker' title='Position' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'></a><a role='button' class='btn btn-success fa fa-taxi' style='margin:5px' title='Angkot' onclick='angkot_sekitar_lagi(\""+id+"\")'></a></td></tr>");
           }//end for
         }});//end ajax  
       }
@@ -1687,7 +1695,7 @@ function hideLegenda() {
               map.setCenter(centerBaru);
               klikInfoWindowKul(id,marker);
 
-              $('#table_kanan_culinary').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-default' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'>Route</a><a role='button' style='margin:5px' class='btn btn-default' onclick='modal_kuliner(\""+id+"\")'>Info</a><a role='button' style='margin:5px' class='btn btn-default' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'>Position</a><a role='button' class='btn btn-default' style='margin:5px' onclick='angkot_sekitar_lagi(\""+id+"\")'>Angkot</a></td></tr>");
+              $('#table_kanan_culinary').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-info' title='Info' onclick='modal_kuliner(\""+id+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-map-marker' title='Position' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'></a><a role='button' class='btn btn-success fa fa-taxi' style='margin:5px' title='Angkot' onclick='angkot_sekitar_lagi(\""+id+"\")'></a></td></tr>");
             }//end for
           }});//end ajax  
         }
@@ -1720,7 +1728,7 @@ function hideLegenda() {
             map.setCenter(centerBaru);
             klikInfoWindowMes(id,marker);
 
-            $('#table_kanan_worship').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-default' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'>Route</a><a role='button' style='margin:5px' class='btn btn-default' onclick='modal_masjid(\""+id+"\")'>Info</a><a role='button' style='margin:5px' class='btn btn-default' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'>Position</a><a role='button' class='btn btn-default' style='margin:5px' onclick='angkot_sekitar_lagi(\""+id+"\")'>Angkot</a></td></tr>");
+            $('#table_kanan_worship').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-info' title='Info' onclick='modal_masjid(\""+id+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-map-marker' title='Position' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'></a><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' style='margin:5px' onclick='angkot_sekitar_lagi(\""+id+"\")'></a></td></tr>");
           }//end for
         }});//end ajax  
       }
@@ -1753,7 +1761,7 @@ function hideLegenda() {
               map.setCenter(centerBaru);
               klikInfoWindowSou(id,marker);
 
-              $('#table_kanan_souvenir').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-default' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'>Route</a><a role='button' style='margin:5px' class='btn btn-default' onclick='modal_oo(\""+id+"\")'>Info</a><a role='button' style='margin:5px' class='btn btn-default' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'>Position</a><a role='button' class='btn btn-default' style='margin:5px' onclick='angkot_sekitar_lagi(\""+id+"\")'>Angkot</a></td></tr>");
+              $('#table_kanan_souvenir').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-info' title='Info' onclick='modal_oo(\""+id+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-map-marker' title='Position' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'></a><a role='button' class='btn btn-success fa fa-taxi' title='Angkot' style='margin:5px' onclick='angkot_sekitar_lagi(\""+id+"\")'></a></td></tr>");
             }//end for
           }});//end ajax  
         }
@@ -1785,7 +1793,7 @@ function hideLegenda() {
               map.setCenter(centerBaru);
               klikInfoWindowOW(id,marker);
 
-              $('#table_kanan_tourism').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-default' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'>Route</a><a role='button' style='margin:5px' class='btn btn-default' onclick='modal_tw(\""+id+"\")'>Info</a><a role='button' style='margin:5px' class='btn btn-default' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'>Position</a><a role='button' class='btn btn-default' style='margin:5px' onclick='angkot_sekitar_lagi(\""+id+"\")'>Angkot</a></td></tr>");
+              $('#table_kanan_tourism').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-info' title='Info' onclick='modal_tw(\""+id+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-map-marker' title='Position' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'></a><a role='button' class='btn btn-success fa fa-taxi' style='margin:5px' title='Angkot' onclick='angkot_sekitar_lagi(\""+id+"\")'></a></td></tr>");
             }//end for
           }});//end ajax  
 
@@ -1820,7 +1828,7 @@ function hideLegenda() {
               map.setCenter(centerBaru);
               klikInfoWindow(id,marker);
 
-            $('#table_kanan_hotel').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-default' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'>Route</a><a role='button' style='margin:5px' class='btn btn-default' onclick='modal_hotel(\""+id+"\")'>Info</a><a role='button' style='margin:5px' class='btn btn-default' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'>Position</a><a role='button' class='btn btn-default' style='margin:5px' onclick='angkot_sekitar_lagi(\""+id+"\")'>Angkot</a></td></tr>");
+            $('#table_kanan_hotel').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-info' title='Info' onclick='modal_hotel(\""+id+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-map-marker' title='Position' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'></a><a role='button' class='btn btn-success fa fa-taxi' style='margin:5px' title='Angkot' onclick='angkot_sekitar_lagi(\""+id+"\")'></a></td></tr>");
             }//end for
           }});//end ajax  
         }
@@ -1853,7 +1861,7 @@ function hideLegenda() {
               map.setCenter(centerBaru);
               klikInfoWindow(id,marker);
 
-              $('#table_kanan_restaurant').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-default' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'>Route</a><a role='button' style='margin:5px' class='btn btn-default' onclick='modal_restaurant(\""+id+"\")'>Info</a><a role='button' style='margin:5px' class='btn btn-default' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'>Position</a><a role='button' class='btn btn-default' style='margin:5px' onclick='angkot_sekitar_lagi(\""+id+"\")'>Angkot</a></td></tr>");
+              $('#table_kanan_restaurant').append("<tr><td>"+name+"</td><td><a role='button' style='margin:5px' class='btn btn-success fa fa-road' title='Route' onclick='route_sekitar(\""+latitude+"\",\""+longitude+"\",\""+lat+"\",\""+lon+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-info' title='Info' onclick='modal_restaurant(\""+id+"\")'></a><a role='button' style='margin:5px' class='btn btn-success fa fa-map-marker' title='Position' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'></a><a role='button' class='btn btn-success fa fa-taxi' style='margin:5px' title='Angkot' onclick='angkot_sekitar_lagi(\""+id+"\")'></a></td></tr>");
             }//end for
           }});//end ajax  
         }
@@ -1887,7 +1895,7 @@ function hideLegenda() {
               var lng2 = row.lng2;
               console.log(id);
               route_angkot_1(id,color);
-              $('#table_kanan_angkot').append("<tr><td>"+destination+"</td><td><a role='button' class='btn btn-default' onclick='modal_angkot(\""+ids+"\")'>Info</a><a style='margin-left:10px' role='button' class='btn btn-default fa fa-bus' onclick='clearangkot();route_angkot(\""+lat2+"\",\""+lng2+"\",\""+lat+"\",\""+lng+"\",\""+ids+"\",\""+id+"\")'>Route</a></td></tr>");         
+              $('#table_kanan_angkot').append("<tr><td>"+destination+"</td><td><a role='button' title='info' class='btn btn-success fa fa-info' onclick='modal_angkot(\""+ids+"\")'></a><a style='margin-left:10px' role='button' title='Angkot' class='btn btn-success fa fa-taxi' onclick='clearangkot();route_angkot(\""+lat2+"\",\""+lng2+"\",\""+lat+"\",\""+lng+"\",\""+ids+"\",\""+id+"\")'></a></td></tr>");         
             }               
 //            route_angkot(lat1,lng1,lat,lng,id_angkot,id
         }});      
@@ -2052,7 +2060,7 @@ function hideLegenda() {
                   mushalla_stat = "Ada Mushalla"
                 };
 
-                $('#view_rekom_table').append("<tr><td style='text-align:left'><b style='font-size:20px'>"+name+"</b><br>Address: "+address+"<br>Cp: "+cp+"<br>Syarat Menginap: "+syarat+"<br>Mushalla: "+mushalla_stat+"<br>Tipe Hotel: "+type_hotel+"</td><td><a role='button' class='btn btn-success' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'>Position</a></td></tr>");
+                $('#view_rekom_table').append("<tr><td style='text-align:left'><b style='font-size:20px'>"+name+"</b><br>Address: "+address+"<br>Cp: "+cp+"<br>Booking Requirement: "+syarat+"<br>Mushalla: "+mushalla_stat+"<br>Tipe Hotel: "+type_hotel+"</td><td><a role='button' class='btn btn-success' onclick='set_center(\""+lat+"\",\""+lon+"\",\""+name+"\")'>Position</a></td></tr>");
               }//end for
             //loader                 
             $("#loader").hide();
@@ -2112,7 +2120,7 @@ function hideLegenda() {
               var lng2 = row.lng2;
               console.log(id);
               //route_angkot_1(id,color);
-              $('#view_tracking_table').append("<tr><td>"+destination+"</td><td><a role='button' class='btn btn-default' onclick='modal_angkot(\""+ids+"\")'>Info</a><a style='margin-left:10px' role='button' class='btn btn-default fa fa-bus' onclick='clearangkot();route_angkot(\""+lat2+"\",\""+lng2+"\",\""+lat+"\",\""+lng+"\",\""+ids+"\",\""+id+"\")'>Route</a></td></tr>");         
+              $('#view_tracking_table').append("<tr><td>"+destination+"</td><td><a role='button' title='info' class='btn btn-success fa fa-info' title='Info' onclick='modal_angkot(\""+ids+"\")'></a><a style='margin-left:10px' role='button' title='angkot' class='btn btn-success fa fa-taxi' title='Route' onclick='clearangkot();route_angkot(\""+lat2+"\",\""+lng2+"\",\""+lat+"\",\""+lng+"\",\""+ids+"\",\""+id+"\")'></a></td></tr>");         
             }               
         }});      
       }

@@ -387,7 +387,7 @@
                 $('#angkot_sekitar').empty();
                 $('#angkot_sekitar').append("<a role='button' class='btn btn-default text-center' onclick='objek_sekitar_angkot(\""+id_angkots+"\")' id='btnik' style='margin:10px'>Process </a>");      
 
-          // Tombol Gllaery
+              // Tombol Gllaery
                 $('#label_gallery').empty();
                 console.log(id_angkots);
                 $('#label_gallery').append("<a class='btn btn-default' role=button' data-toggle='collapse'  onclick='galeri(\""+id_angkots+"\")' title='Nearby' aria-controls='Nearby' id='btn_gallery'><i class='fa fa-compass' style='color:black;''></i><label>&nbsp Gallery</label></a>")

@@ -34,7 +34,7 @@ session_start();
     <script src="assets/js/chart-master/Chart.js"></script>
 
     <script src="../config_public.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNnzxae2AewMUN0Tt_fC3gN38goeLVdVE&sensor=true"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANIx4N48kL_YEfp-fVeWmJ_3MSItIP8eI&callback=true"></script>
 
       <!--LOADER-->
     <style>
@@ -58,6 +58,17 @@ session_start();
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+    .html5gallery img {
+      width:460px !important;
+      left: 0px !important;
+    }
+    .html5gallery-car-0 {
+      margin-top:5px;
+      margin-bottom: 5px;
+      width : 460px !important;
+     
+    }
     </style>
   
   </head>
@@ -65,12 +76,12 @@ session_start();
   <body onload="init();data_hotel_1_info('<?php echo $_GET["idgallery"] ?>');">
 
    <section id="container" >
-      <header class="header black-bg">
+      <header class="header black-bg" style="background-color:black;border-bottom:1px solid black;">
         <div class="sidebar-toggle-box">
-          <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+          <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation" style="color:white"></div>
         </div>
             <!--logo start-->
-        <a href="index.php" class="logo"><b>Bukittinggi Tourism</b></a>
+        <a href="index.php" class="logo" style="color:white"><b>WebGis Hotel 24-Fandy Akbar-1811523004</b></a>
         <div class="top-menu">
           <ul class="nav pull-right top-menu">
             <li><div id="loader" style="display:none"></div></li>
@@ -80,7 +91,7 @@ session_start();
       </header>
 
       <aside>
-          <div id="sidebar"  class="nav-collapse ">
+          <div id="sidebar"  class="nav-collapse " style="background-color:#424a5d" >
               <ul class="sidebar-menu" id="nav-accordion">
               
                   <!--p class="centered"><a href="profile.html"><img src="assets/img/masjid.png" class="img-circle" width="90"></a></p-->
@@ -104,7 +115,7 @@ session_start();
                 <div class="col-sm-6"> <!-- information -->
                     <section class="panel">
                       <header class="panel-heading">
-                        <h2 class="box-title" style="text-transform:capitalize;"><b> Information</b></h2>
+                        <h2 class="box-title" style="text-transform:capitalize;"><b> Detail Information</b></h2>
                       </header>
 
                       <div class="panel-body">
@@ -141,7 +152,7 @@ session_start();
                         $result = pg_query($sqlreview);
                       ?>
                       <table class="table">
-                        <thead><th>Tanggal</th><th class="centered">Info</th></thead>
+                        <thead><th>Date</th><th class="centered">Info</th></thead>
                       <?php  
                         while ($rows = pg_fetch_array($result)) 
                           {
@@ -241,10 +252,11 @@ session_start();
                     <div class="col-sm-12"> <!-- gallery -->
                       <section class="panel">
                           <div class="panel-body">
-                              <a class="btn btn-compose">Gallery</a>
+                              <a class="btn btn-compose" style="background-color:black;border-bottom:1px solid black;color:white">Gallery</a>
                               <div class="content" style="text-align:center;">
-                              <div class="html5gallery" style="max-height:700px; overflow:auto;" data-skin="horizontal" data-width="350" data-height="200" data-resizemode="fit">  
-                                <?php
+                              
+                              <div style="margin:10px; display:flex; justify-content:center" >
+                              <div class="html5gallery" style="max-height:700px; display:block;" data-skin="horizontal" data-width="460" data-height="300" data-resizemode="fit"><?php
                               
                               if (strpos($id,"H") !== false) {  //Hotel
 
@@ -356,6 +368,7 @@ session_start();
                           ?>
                                         
                               </div>
+                            </div>
                               </div>
                           </div>
                       </section>
@@ -366,8 +379,9 @@ session_start();
 
                                 <header class="panel-heading" style="float:left">
                                   <label style="color: black; margin-right:20px">Google Map with Location List</label>
-                                  <a class="btn btn-default" role="button" data-toggle="collapse" onclick="lokasimanual()" title=" Manual Position" ><i class="fa fa-location-arrow" style="color:black;"></i></a>
-                                  <a class="btn btn-default" role="button" data-toggle="collapse" onclick="posisisekarang()" title="Current Position" style="margin-right:10px"   ><i class="fa fa-map-marker" style="color:black;"></i></a>
+                                  <a class="btn btn-success" role="button" data-toggle="collapse" onclick="lokasimanual()" title=" Manual Position" ><i class="fa fa-location-arrow" style="color:white;"></i></a>
+                                  <a class="btn btn-success" role="button" data-toggle="collapse" onclick="posisisekarang()" title="Current Position"><i class="fa fa-map-marker" style="color:white;"></i></a>
+                                    <a class="btn btn-success" role="button" id="showlegenda" data-toggle="collapse" onclick="legenda()" title="Legend"   ><i class="fa fa-eye" style="color:white;"></i></a>
                                 </header>
                                 <div class="row">
                                    <div class="col-sm-6 col-xs-6"></div>

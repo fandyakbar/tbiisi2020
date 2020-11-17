@@ -586,7 +586,7 @@
           //clearangkot();
           hapus_menu();
           $('#view_kanan_table').show();
-          document.getElementById('judul_table').innerHTML="List Hotel";
+          document.getElementById('judul_table').innerHTML="Result";
 
           $('#kanan_table').empty();
           $('#kanan_table').append("<tr><th class='centered'>Name</th><th class='centered'>Action</th></tr>");
